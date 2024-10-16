@@ -1,0 +1,15 @@
+.fullscreen-animated-image {
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+
+    .fullscreen-image-content {      
+    
+        h3 {
+            color: white;
+        }
+    }
+}
+
