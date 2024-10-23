@@ -1,15 +1,26 @@
-.fullscreen-animated-image {
+.fullscreen-video-wrapper {
+    overflow: hidden;
     width: 100%;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
+    height: 93.5vh;
 
-    .fullscreen-image-content {      
-    
-        h3 {
-            color: white;
+    .fullscreen-video-container {
+        height: 95vh;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        top: -8.5vh;
+        width: 300%;
+        left: -100%;
+        
+        .fullscreen-video {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
         }
     }
+    
 }
+
 
