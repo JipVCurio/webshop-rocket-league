@@ -16,13 +16,14 @@
     }
 
     a button {
+        color: white;
         margin-top: 10px;
-        background-color: lightgray;
+        background-color: #6f2f8a;
     }
 
     a button:hover {
-        color: black;
-        background-color: darkgray;
+        color: white;
+        background-color: #4c205e;
     }
 }
 

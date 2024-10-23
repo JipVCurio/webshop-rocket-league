@@ -1,13 +1,13 @@
 .products-container {
-    display: flex;
     gap: 20px;
+    display: flex;
     flex-wrap: wrap;
     padding: 5vh 0;
     justify-content: center;
 }
 
 .product-card {
-    border: 1px solid #6f2f8a !important;
+    border: 2px solid #000000 !important;
     max-width: 20%;
 
     .card-header {
@@ -38,15 +38,21 @@
         height: auto;
     }
 
-    button {
-        border: 1px solid #6f2f8a;
-        background-color: #4c205e;
+    button { 
+        border: 1px solid #4c205e;
+        background-color: #6f2f8a;
+        
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
     }
 
-    button a {
+    button:hover {
         color: white;
-        font-weight: bold;
-        text-decoration: none;
+        border: 1px solid #4c205e;
+        background-color: #4c205e;
     }
 
     .product-card-redirect-link {
