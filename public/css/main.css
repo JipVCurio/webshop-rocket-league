@@ -1,3 +1,7 @@
 main {
-    background-color: black;
+    background-color: #303030;
+}
+
+.navbar {
+    z-index: 20;
 }
