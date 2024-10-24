@@ -120,6 +120,30 @@
     }
 }
 
+
+.form-container {
+    display:block;
+    height: 93.3vh;
+
+    h2 {
+        color: #ffffff;
+        padding-top: 1rem;
+    }
+
+    label {
+        color: #ffffff;
+        margin-top: 1rem;
+    }
+
+    button {
+        color: #ffffff;
+        margin-top: 1rem;
+        border: 1px solid #4c205e;
+        background-color: #6f2f8a;
+    }
+}
+
+
 @media(max-width: 1020px) {
     .product-card {
         max-width: 40%;
