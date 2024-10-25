@@ -13,6 +13,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('products.index') }}">{{ __('Producten') }}</a>
             </li>
+            @IsAdmin
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('products.create') }}">{{ __('Nieuw product') }}</a>
+                </li>
+            @endIsAdmin
             </ul>
 
             <!-- Right Side Of Navbar -->

@@ -2,10 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="product-display-container">
+    <div class="product-show">
         <h2>{{$product->name}}</h2>
-        <div class="product-display-image-container">
-            <img src={{$product->imageUrl}}>
+        <div class="product-display-container">
+            <div class="product-display-image-container">
+                <img src={{$product->imageUrl}}>
+            </div>
         </div>
         <div class="product-details-container">
             <h3>{{$product->rarity}} {{$product->type}}</h3>

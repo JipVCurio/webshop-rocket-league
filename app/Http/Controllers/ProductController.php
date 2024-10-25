@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -26,8 +25,9 @@ class ProductController extends Controller
     }
 
     public function store(Request $request) {
+
         $imageName = $request->file('image')->store('', 'media_uploads');
-            $request->file('image')->store('', 'media_uploads');
+        $request->file('image')->store('', 'media_uploads');
 
         $product = new Product();
         $product->name = $request->name;
@@ -41,15 +41,30 @@ class ProductController extends Controller
         return redirect(to: '/products');
     }
 
-    public function edit() {
+    public function edit(int $id) {
+        $product = Product::findOrFail($id);
 
+        return view('product.edit')->with('product', $product);
     }
 
     public function update(Request $request) {
+        $product = Product::findOrFail( $request->id);
+        $product->fill($request->only(['name', 'description', 'rarity', 'type', 'price']));
 
+        if ($request->hasFile('image')) {
+            $imageName = $request->file('image')->store('', 'media_uploads');
+            $product->imageUrl = "/media/uploads/$imageName";
+        }
+
+        $product->save();
+
+        return redirect()->route('products.index');
     }
 
-    public function delete(int $id) {
-        
+    public function destroy(Request $request) {
+        $product = Product::findOrFail(id: $request->id);
+        $product->delete();
+
+        return redirect()->route('products.index');
     }
 }

@@ -8,11 +8,30 @@
         </div>
         <div class="card-body">
             <p>{{$product->description}}</p>
-            <button class="btn btn-primary">
-                <a href="">
-                    €{{$product->price}}
+                <a href="#">
+                    <button class="btn btn-primary">
+                        €{{$product->price}}
+                    </button>
                 </a>
-            </button>
+            @IsAdmin
+                <div class="align-crud-buttons">
+                    <a class="update-link" href={{route('products.edit', ['id' => $product->id])}}>
+                        <button class="btn btn-info">
+                            Update
+                        </button>
+                    </a>
+                    <form method="post" action={{route('products.destroy')}}>
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger">
+                            <a>
+                                Delete product
+                            </a>
+                        </button>
+                        <input name="id" type="number" value={{$product->id}} hidden/>
+                    </form>
+                </div>
+            @endIsAdmin
         </div>
     </a>
 </div>
